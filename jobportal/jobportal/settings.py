@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'portal', 
     'tailwind',
     'theme',
+    'django_browser_reload',
 ]
 
 TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = ['172.0.0.1']
+INTERNAL_IPS = ['127.0.0.1']
 
 NPM_BIN_PATH = '/usr/local/bin/npm'
 
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'jobportal.urls'

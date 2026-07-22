@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}Student Management System{% endblock %}
+    </title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f5f8;
+            color: #202938;
+        }
+
+        .navbar {
+            min-height: 90px;
+            padding: 20px 40px;
+            background: #1f2a3a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .navbar nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            color: #9dbbff;
+        }
+
+        .page-header {
+            padding: 45px 20px;
+            text-align: center;
+            background: #2f67e8;
+            color: white;
+        }
+
+        .page-header h2 {
+            margin: 0 0 10px;
+            font-size: 38px;
+        }
+
+        .page-header p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: 35px auto;
+        }
+
+        .content-card {
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+        }
+
+        .content-heading {
+            margin-bottom: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .content-heading h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 18px;
+            border: none;
+            border-radius: 6px;
+            background: #2f67e8;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #1f4fc5;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #dfe3e8;
+            text-align: left;
+        }
+
+        th {
+            background: #1f2a3a;
+            color: white;
+        }
+
+        tbody tr:hover {
+            background: #f2f6ff;
+        }
+
+        .empty-message {
+            padding: 30px;
+            text-align: center;
+            color: #697386;
+        }
+
+        .status {
+            display: inline-block;
+            min-width: 80px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .present {
+            background: #d9f7e5;
+            color: #08783e;
+        }
+
+        .absent {
+            background: #ffe0e0;
+            color: #b42318;
+        }
+
+        .late {
+            background: #fff1ca;
+            color: #8b5a00;
+        }
+
+        .excused {
+            background: #e4e9ff;
+            color: #3049a5;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .content-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .page-header h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <h1>Student Management System</h1>
+
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'students' %}">Students</a>
+            <a href="{% url 'courses' %}">Courses</a>
+            <a href="{% url 'attendance' %}">Attendance</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

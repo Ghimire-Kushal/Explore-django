@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Attendance | Student Management System{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <h2>Attendance</h2>
+    <p>Total records: {{ attendance_count }}</p>
+</section>
+
+<main class="container">
+    <section class="content-card">
+        <div class="content-heading">
+            <h3>Attendance Records</h3>
+        </div>
+
+        {% if attendance_records %}
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in attendance_records %}
+                    <tr>
+                        <td>{{ record.date }}</td>
+                        <td>{{ record.student.student_id }}</td>
+                        <td>{{ record.student.full_name }}</td>
+                        <td>{{ record.student.course|default:'Not assigned' }}</td>
+                        <td>
+                            <span class="status {{ record.status|lower }}">
+                                {{ record.status }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-message">No attendance records found.</div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

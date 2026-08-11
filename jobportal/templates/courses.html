@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses | Student Management System{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <h2>Courses</h2>
+    <p>Total courses: {{ course_count }}</p>
+</section>
+
+<main class="container">
+    <section class="content-card">
+        <div class="content-heading">
+            <h3>Course List</h3>
+        </div>
+
+        {% if courses %}
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Duration</th>
+                        <th>Students</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        <td>{{ course.code }}</td>
+                        <td>{{ course.name }}</td>
+                        <td>{{ course.duration }}</td>
+                        <td>{{ course.students.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="empty-message">No courses found.</div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

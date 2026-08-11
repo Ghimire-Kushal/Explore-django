@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from portal.models import Attendance, Course, Student
+
 
 def home(request):
     return render(request, 'index.html')

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from .import views
 
-
+# urlpatterns 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -29,5 +29,5 @@ urlpatterns = [
     path("attendance/", views.attendance_list, name="attendance"),
 
     path('__reload__/', include('django_browser_reload.urls')),
-    
+
 ]

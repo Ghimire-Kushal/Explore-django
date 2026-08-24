@@ -29,4 +29,5 @@ urlpatterns = [
     path("attendance/", views.attendance_list, name="attendance"),
 
     path('__reload__/', include('django_browser_reload.urls')),
+    
 ]

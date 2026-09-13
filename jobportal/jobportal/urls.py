@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from .import views
 
-# urlpatterns created to map the URL patterns to the corresponding views in the jobportal application. Each path function defines a route and associates it with a view function that will handle the request for that route.
+# urlpatterns created to map the URL patterns to the corresponding views inyhr  jobportal application. Each path function defines a route and associates it with a view function that will handle the request for that route.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),

@@ -21,12 +21,16 @@ from .import views
 # The URL patterns map routes to the corresponding views in the jobportal application.
 # Each path associates a URL with the view function that handles the request.
 urlpatterns = [
+    # Django administration route.
     path('admin/', admin.site.urls),
+    # Public landing page.
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
+    # Student and course management routes.
     path("students/", views.student_list, name="students"),
     path("courses/", views.course_list, name="courses"),
+    # Attendance tracking route.
     path("attendance/", views.attendance_list, name="attendance"),
 
     path('__reload__/', include('django_browser_reload.urls')),

@@ -28,12 +28,15 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
+    # Student directory route.
     # Student and course management routes.
     path("students/", views.student_list, name="students"),
+    # Course catalog route.
     path("courses/", views.course_list, name="courses"),
     # Attendance tracking route.
     path("attendance/", views.attendance_list, name="attendance"),
 
+    # Development-only live reload route.
     path('__reload__/', include('django_browser_reload.urls')),
 
 ]

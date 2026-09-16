@@ -25,6 +25,7 @@ urlpatterns = [
     # Django administration route.
     path('admin/', admin.site.urls),
     # Public landing page.
+    # The root route serves the main application entry point.
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),

@@ -21,6 +21,7 @@ from .import views
 # The URL patterns map routes to the corresponding views in the jobportal application.
 # Each path associates a URL with the view function that handles the request.
 urlpatterns = [
+    # Application URL configuration.
     # Core application routes.
     # Django administration route.
     path('admin/', admin.site.urls),

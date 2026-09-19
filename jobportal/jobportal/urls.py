@@ -23,6 +23,7 @@ from .import views
 urlpatterns = [
     # Application URL configuration.
     # Routes are evaluated from top to bottom.
+    # Keep specific routes above broader fallback routes.
     # Core application routes.
     # Django administration route.
     path('admin/', admin.site.urls),

@@ -22,6 +22,7 @@ from .import views
 # Each path associates a URL with the view function that handles the request.
 urlpatterns = [
     # Application URL configuration.
+    # Keep route comments close to the paths they describe.
     # Routes are evaluated from top to bottom.
     # Keep specific routes above broader fallback routes.
     # Core application routes.

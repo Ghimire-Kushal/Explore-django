@@ -24,6 +24,7 @@ urlpatterns = [
     # Application URL configuration.
     # Keep route comments close to the paths they describe.
     # Clear route notes make future maintenance easier.
+    # Group related endpoints together for easier navigation.
     # Routes are evaluated from top to bottom.
     # Keep specific routes above broader fallback routes.
     # Core application routes.

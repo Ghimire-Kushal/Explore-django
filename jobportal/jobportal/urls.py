@@ -46,5 +46,4 @@ urlpatterns = [
 
     # Development-only live reload route.
     path('__reload__/', include('django_browser_reload.urls')),
-
 ]

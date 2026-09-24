@@ -40,7 +40,7 @@ urlpatterns = [
     # Student and course management routes.
     path('students/', views.student_list, name='students'),
     # Course catalog route.
-    path("courses/", views.course_list, name="courses"),
+    path('courses/', views.course_list, name='courses'),
     # Attendance tracking route.
     path("attendance/", views.attendance_list, name="attendance"),
 

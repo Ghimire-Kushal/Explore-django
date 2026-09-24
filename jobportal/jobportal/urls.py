@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from .import views
+from . import views
 
 # The URL patterns map routes to the corresponding views in the jobportal application.
 # Each path associates a URL with the view function that handles the request.
